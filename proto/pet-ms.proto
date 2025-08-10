@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+option go_package = "https://github.com/LuizFJP/pet-ms";
+
+package proto;
+
+service PetService {
+  rpc Create (CreatePetRequest) returns (CreatePetResponse) {}
+  rpc Update (UpdatePetRequest) returns (UpdatePetResponse) {}
+  rpc Delete (DeletePetRequest) returns (DeletePetResponse) {}
+  rpc Get (GetPetRequest) returns (GetPetResponse) {}
+}
+
+message CreatePetRequest {
+  string uuid_guardian = 1;
+  string name = 2;
+  uint64 birth_year = 3;
+  string breed = 4;
+  uint64 specie = 5;
+}
+
+message CreatePetResponse {
+  int64 n_identification = 1;
+  string uuid = 2;
+  string uuid_guardian = 3;
+  string name = 4;
+  uint64 birth_year = 5;
+  string breed = 6;
+  string specie = 7;
+}
+
+message UpdatePetRequest {
+  string uuid = 2;
+  string name = 4;
+  uint64 birth_year = 5;
+  string breed = 6;
+  string specie = 7;
+}
+
+message UpdatePetResponse {
+  int64 n_identification = 1;
+  string uuid = 2;
+  string uuid_guardian = 3;
+  string name = 4;
+  uint64 birth_year = 5;
+  string breed = 6;
+  string specie = 7;
+}
+
+message DeletePetRequest {
+  string uuid = 1;
+}
+
+message DeletePetResponse {
+  string message = 1;
+}
+
+message GetPetRequest {
+  string uuid_guardian = 1;
+}
+
+message GetPetResponse {
+  int64 n_identification = 1;
+  string uuid = 2;
+  string uuid_guardian = 3;
+  string name = 4;
+  uint64 birth_year = 5;
+  string breed = 6;
+  string specie = 7;
+}

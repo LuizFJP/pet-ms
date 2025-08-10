@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16
+    container_name: pg_pet
+    environment:
+      POSTGRES_DB: pet_db
+      POSTGRES_USER: lgc_user
+      POSTGRES_PASSWORD: lgc_teste_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lgc_user -d pet_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  pgdata:
