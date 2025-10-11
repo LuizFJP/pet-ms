@@ -11,6 +11,10 @@ type petApplication struct {
 
 var _ PetApplicationInterface = &petApplication{}
 
+func NewPetApplication(pr repository.PetRepository) PetApplicationInterface {
+	return &petApplication{pr}
+}
+
 type PetApplicationInterface interface {
 	SavePet(pet *entity.Pet) (*entity.Pet, map[string]string)
 	GetPet(uuid string) (*entity.Pet, map[string]string)
@@ -19,17 +23,17 @@ type PetApplicationInterface interface {
 }
 
 func (p *petApplication) SavePet(pet *entity.Pet) (*entity.Pet, map[string]string) {
-	return nil, nil
+	return p.pr.SavePet(pet)
 }
 
 func (p *petApplication) GetPet(uuid string) (*entity.Pet, map[string]string) {
-	return nil, nil
+	return p.pr.GetPet(uuid)
 }
 
 func (p *petApplication) UpdatePet(pet *entity.Pet) (*entity.Pet, map[string]string) {
-	return nil, nil
+	return p.pr.UpdatePet(pet)
 }
 
 func (p *petApplication) DeletePet(uuid string) (map[string]string, map[string]string) {
-	return nil, nil
+	return p.pr.DeletePet(uuid)
 }

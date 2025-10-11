@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/LuizFJP/pet-ms/application"
 	"github.com/LuizFJP/pet-ms/infrastructure/persistence"
 	server "github.com/LuizFJP/pet-ms/interfaces/grpc"
 	pb "github.com/LuizFJP/pet-ms/proto"
@@ -23,8 +24,10 @@ func main() {
 	defer services.Close()
 	services.Automigrate()
 
+	app := application.NewPetApplication(services.Pet)
+
 	s := grpc.NewServer()
-	petServer := server.NewPetServer(services.Pet)
+	petServer := server.NewPetServer(app)
 	pb.RegisterPetServiceServer(s, petServer)
 	log.Printf("gRPC server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {

@@ -14,8 +14,8 @@ const (
 )
 
 type Pet struct {
-	NIdentification string
-	Uuid            uuid.UUID `json:"uuid"`
+	NIdentification uint      `gorm:"AUTO_INCREMENT"`
+	Uuid            uuid.UUID `gorm:"primaryKey" json:"uuid"`
 	UuidGuardian    uuid.UUID `json:"uuid_guardian"`
 	Name            string    `json:"name"`
 	BirthYear       int       `json:"birth_year"`

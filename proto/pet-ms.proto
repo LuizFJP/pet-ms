@@ -34,7 +34,7 @@ message UpdatePetRequest {
   string name = 4;
   uint64 birth_year = 5;
   string breed = 6;
-  string specie = 7;
+  uint64 specie = 7;
 }
 
 message UpdatePetResponse {
@@ -48,7 +48,7 @@ message UpdatePetResponse {
 }
 
 message DeletePetRequest {
-  string uuid = 1;
+  string uuid_guardian = 1;
 }
 
 message DeletePetResponse {
@@ -56,7 +56,7 @@ message DeletePetResponse {
 }
 
 message GetPetRequest {
-  string uuid_guardian = 1;
+  string uuid = 1;
 }
 
 message GetPetResponse {
