@@ -16,5 +16,27 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+
+  pet-ms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        MAIN_PACKAGE: ./init
+        VERSION: "1.0.0"
+        COMMIT: "${GIT_COMMIT:-local}"
+        BUILD_TIME: "${BUILD_TIME:-now}"
+    image: pet-ms:1.0.0
+    ports:
+      - "50051:50051"
+    environment:
+      APP_PORT: "50051"
+      DB_DSN: "postgres://lgc_user:lgc_teste_password@db:5432/pet_db?sslmode=disable"
+
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   pgdata:

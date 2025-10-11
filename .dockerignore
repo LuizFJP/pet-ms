@@ -1,0 +1,19 @@
+# Go
+bin/
+dist/
+coverage.out
+
+# Git/IDE
+.git
+.gitignore
+.idea
+.vscode
+
+# Build caches
+**/*.log
+tmp/
+vendor/
+.node_modules/
+
+# Artefatos gerados
+**/*.test

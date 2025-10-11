@@ -7,17 +7,18 @@ import (
 	pb "github.com/LuizFJP/pet-ms/proto"
 	_ "github.com/lib/pq"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 )
 
 func main() {
-	lis, err := net.Listen("tcp", ":50051")
+	lis, err := net.Listen("tcp", "0.0.0.0:50051")
 	if err != nil {
 		log.Fatalf("failed to listen on port 50051: %v", err)
 	}
 
-	services, err := persistence.NewPetRepo("postgres", "lgc_user", "lgc_teste_password", "5432", "localhost", "pet_db")
+	services, err := persistence.NewPetRepo("postgres", "lgc_user", "lgc_teste_password", "5432", "db", "pet_db")
 	if err != nil {
 		panic(err)
 	}
@@ -27,6 +28,7 @@ func main() {
 	app := application.NewPetApplication(services.Pet)
 
 	s := grpc.NewServer()
+	reflection.Register(s)
 	petServer := server.NewPetServer(app)
 	pb.RegisterPetServiceServer(s, petServer)
 	log.Printf("gRPC server listening at %v", lis.Addr())
