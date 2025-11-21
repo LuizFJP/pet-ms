@@ -633,13 +633,14 @@ const file_pet_ms_proto_rawDesc = "" +
 	"\n" +
 	"birth_year\x18\x05 \x01(\x04R\tbirthYear\x12\x14\n" +
 	"\x05breed\x18\x06 \x01(\tR\x05breed\x12\x16\n" +
-	"\x06specie\x18\a \x01(\tR\x06specie2\xff\x01\n" +
+	"\x06specie\x18\a \x01(\tR\x06specie2\xd7\x02\n" +
 	"\n" +
-	"PetService\x12=\n" +
-	"\x06Create\x12\x17.proto.CreatePetRequest\x1a\x18.proto.CreatePetResponse\"\x00\x12=\n" +
-	"\x06Update\x12\x17.proto.UpdatePetRequest\x1a\x18.proto.UpdatePetResponse\"\x00\x12=\n" +
-	"\x06Delete\x12\x17.proto.DeletePetRequest\x1a\x18.proto.DeletePetResponse\"\x00\x124\n" +
-	"\x03Get\x12\x14.proto.GetPetRequest\x1a\x15.proto.GetPetResponse\"\x00B#Z!https://github.com/LuizFJP/pet-msb\x06proto3"
+	"PetService\x12M\n" +
+	"\x06Create\x12\x17.proto.CreatePetRequest\x1a\x18.proto.CreatePetResponse\"\x10\x82\xd3\xe4\x93\x02\n" +
+	":\x01*\"\x05/pets\x12T\n" +
+	"\x06Update\x12\x17.proto.UpdatePetRequest\x1a\x18.proto.UpdatePetResponse\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\x1a\f/pets/{uuid}\x12Z\n" +
+	"\x06Delete\x12\x17.proto.DeletePetRequest\x1a\x18.proto.DeletePetResponse\"\x1d\x82\xd3\xe4\x93\x02\x17*\x15/pets/{uuid_guardian}\x12H\n" +
+	"\x03Get\x12\x14.proto.GetPetRequest\x1a\x15.proto.GetPetResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\f/pets/{uuid}B#Z!https://github.com/LuizFJP/pet-msb\x06proto3"
 
 var (
 	file_pet_ms_proto_rawDescOnce sync.Once
