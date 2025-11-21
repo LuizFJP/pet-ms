@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v6.32.0--rc1
-// source: proto/pet-ms.proto
+// source: pet-ms.proto
 
-package proto
+package pet_ms
 
 import (
 	context "context"
@@ -231,5 +231,5 @@ var PetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/pet-ms.proto",
+	Metadata: "pet-ms.proto",
 }

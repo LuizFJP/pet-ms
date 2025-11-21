@@ -3,6 +3,8 @@ syntax = "proto3";
 option go_package = "https://github.com/LuizFJP/pet-ms";
 
 package proto;
+import "google/api/annotations.proto";
+
 
 service PetService {
   rpc Create (CreatePetRequest) returns (CreatePetResponse) {}

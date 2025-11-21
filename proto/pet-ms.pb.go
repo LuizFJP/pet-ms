@@ -2,11 +2,12 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        v6.32.0--rc1
-// source: proto/pet-ms.proto
+// source: pet-ms.proto
 
-package proto
+package pet_ms
 
 import (
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -34,7 +35,7 @@ type CreatePetRequest struct {
 
 func (x *CreatePetRequest) Reset() {
 	*x = CreatePetRequest{}
-	mi := &file_proto_pet_ms_proto_msgTypes[0]
+	mi := &file_pet_ms_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46,7 +47,7 @@ func (x *CreatePetRequest) String() string {
 func (*CreatePetRequest) ProtoMessage() {}
 
 func (x *CreatePetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[0]
+	mi := &file_pet_ms_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -59,7 +60,7 @@ func (x *CreatePetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePetRequest.ProtoReflect.Descriptor instead.
 func (*CreatePetRequest) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{0}
+	return file_pet_ms_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreatePetRequest) GetUuidGuardian() string {
@@ -112,7 +113,7 @@ type CreatePetResponse struct {
 
 func (x *CreatePetResponse) Reset() {
 	*x = CreatePetResponse{}
-	mi := &file_proto_pet_ms_proto_msgTypes[1]
+	mi := &file_pet_ms_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -124,7 +125,7 @@ func (x *CreatePetResponse) String() string {
 func (*CreatePetResponse) ProtoMessage() {}
 
 func (x *CreatePetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[1]
+	mi := &file_pet_ms_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -137,7 +138,7 @@ func (x *CreatePetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePetResponse.ProtoReflect.Descriptor instead.
 func (*CreatePetResponse) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{1}
+	return file_pet_ms_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreatePetResponse) GetNIdentification() int64 {
@@ -202,7 +203,7 @@ type UpdatePetRequest struct {
 
 func (x *UpdatePetRequest) Reset() {
 	*x = UpdatePetRequest{}
-	mi := &file_proto_pet_ms_proto_msgTypes[2]
+	mi := &file_pet_ms_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -214,7 +215,7 @@ func (x *UpdatePetRequest) String() string {
 func (*UpdatePetRequest) ProtoMessage() {}
 
 func (x *UpdatePetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[2]
+	mi := &file_pet_ms_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,7 +228,7 @@ func (x *UpdatePetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePetRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePetRequest) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{2}
+	return file_pet_ms_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UpdatePetRequest) GetUuid() string {
@@ -280,7 +281,7 @@ type UpdatePetResponse struct {
 
 func (x *UpdatePetResponse) Reset() {
 	*x = UpdatePetResponse{}
-	mi := &file_proto_pet_ms_proto_msgTypes[3]
+	mi := &file_pet_ms_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -292,7 +293,7 @@ func (x *UpdatePetResponse) String() string {
 func (*UpdatePetResponse) ProtoMessage() {}
 
 func (x *UpdatePetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[3]
+	mi := &file_pet_ms_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -305,7 +306,7 @@ func (x *UpdatePetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePetResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePetResponse) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{3}
+	return file_pet_ms_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdatePetResponse) GetNIdentification() int64 {
@@ -366,7 +367,7 @@ type DeletePetRequest struct {
 
 func (x *DeletePetRequest) Reset() {
 	*x = DeletePetRequest{}
-	mi := &file_proto_pet_ms_proto_msgTypes[4]
+	mi := &file_pet_ms_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -378,7 +379,7 @@ func (x *DeletePetRequest) String() string {
 func (*DeletePetRequest) ProtoMessage() {}
 
 func (x *DeletePetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[4]
+	mi := &file_pet_ms_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -391,7 +392,7 @@ func (x *DeletePetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePetRequest.ProtoReflect.Descriptor instead.
 func (*DeletePetRequest) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{4}
+	return file_pet_ms_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DeletePetRequest) GetUuidGuardian() string {
@@ -410,7 +411,7 @@ type DeletePetResponse struct {
 
 func (x *DeletePetResponse) Reset() {
 	*x = DeletePetResponse{}
-	mi := &file_proto_pet_ms_proto_msgTypes[5]
+	mi := &file_pet_ms_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -422,7 +423,7 @@ func (x *DeletePetResponse) String() string {
 func (*DeletePetResponse) ProtoMessage() {}
 
 func (x *DeletePetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[5]
+	mi := &file_pet_ms_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +436,7 @@ func (x *DeletePetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePetResponse.ProtoReflect.Descriptor instead.
 func (*DeletePetResponse) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{5}
+	return file_pet_ms_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeletePetResponse) GetMessage() string {
@@ -454,7 +455,7 @@ type GetPetRequest struct {
 
 func (x *GetPetRequest) Reset() {
 	*x = GetPetRequest{}
-	mi := &file_proto_pet_ms_proto_msgTypes[6]
+	mi := &file_pet_ms_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -466,7 +467,7 @@ func (x *GetPetRequest) String() string {
 func (*GetPetRequest) ProtoMessage() {}
 
 func (x *GetPetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[6]
+	mi := &file_pet_ms_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -479,7 +480,7 @@ func (x *GetPetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPetRequest.ProtoReflect.Descriptor instead.
 func (*GetPetRequest) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{6}
+	return file_pet_ms_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetPetRequest) GetUuid() string {
@@ -504,7 +505,7 @@ type GetPetResponse struct {
 
 func (x *GetPetResponse) Reset() {
 	*x = GetPetResponse{}
-	mi := &file_proto_pet_ms_proto_msgTypes[7]
+	mi := &file_pet_ms_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -516,7 +517,7 @@ func (x *GetPetResponse) String() string {
 func (*GetPetResponse) ProtoMessage() {}
 
 func (x *GetPetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_pet_ms_proto_msgTypes[7]
+	mi := &file_pet_ms_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -529,7 +530,7 @@ func (x *GetPetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPetResponse.ProtoReflect.Descriptor instead.
 func (*GetPetResponse) Descriptor() ([]byte, []int) {
-	return file_proto_pet_ms_proto_rawDescGZIP(), []int{7}
+	return file_pet_ms_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetPetResponse) GetNIdentification() int64 {
@@ -581,11 +582,11 @@ func (x *GetPetResponse) GetSpecie() string {
 	return ""
 }
 
-var File_proto_pet_ms_proto protoreflect.FileDescriptor
+var File_pet_ms_proto protoreflect.FileDescriptor
 
-const file_proto_pet_ms_proto_rawDesc = "" +
+const file_pet_ms_proto_rawDesc = "" +
 	"\n" +
-	"\x12proto/pet-ms.proto\x12\x05proto\"\x98\x01\n" +
+	"\fpet-ms.proto\x12\x05proto\x1a\x1cgoogle/api/annotations.proto\"\x98\x01\n" +
 	"\x10CreatePetRequest\x12#\n" +
 	"\ruuid_guardian\x18\x01 \x01(\tR\fuuidGuardian\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n" +
@@ -641,19 +642,19 @@ const file_proto_pet_ms_proto_rawDesc = "" +
 	"\x03Get\x12\x14.proto.GetPetRequest\x1a\x15.proto.GetPetResponse\"\x00B#Z!https://github.com/LuizFJP/pet-msb\x06proto3"
 
 var (
-	file_proto_pet_ms_proto_rawDescOnce sync.Once
-	file_proto_pet_ms_proto_rawDescData []byte
+	file_pet_ms_proto_rawDescOnce sync.Once
+	file_pet_ms_proto_rawDescData []byte
 )
 
-func file_proto_pet_ms_proto_rawDescGZIP() []byte {
-	file_proto_pet_ms_proto_rawDescOnce.Do(func() {
-		file_proto_pet_ms_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_pet_ms_proto_rawDesc), len(file_proto_pet_ms_proto_rawDesc)))
+func file_pet_ms_proto_rawDescGZIP() []byte {
+	file_pet_ms_proto_rawDescOnce.Do(func() {
+		file_pet_ms_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_pet_ms_proto_rawDesc), len(file_pet_ms_proto_rawDesc)))
 	})
-	return file_proto_pet_ms_proto_rawDescData
+	return file_pet_ms_proto_rawDescData
 }
 
-var file_proto_pet_ms_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
-var file_proto_pet_ms_proto_goTypes = []any{
+var file_pet_ms_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_pet_ms_proto_goTypes = []any{
 	(*CreatePetRequest)(nil),  // 0: proto.CreatePetRequest
 	(*CreatePetResponse)(nil), // 1: proto.CreatePetResponse
 	(*UpdatePetRequest)(nil),  // 2: proto.UpdatePetRequest
@@ -663,7 +664,7 @@ var file_proto_pet_ms_proto_goTypes = []any{
 	(*GetPetRequest)(nil),     // 6: proto.GetPetRequest
 	(*GetPetResponse)(nil),    // 7: proto.GetPetResponse
 }
-var file_proto_pet_ms_proto_depIdxs = []int32{
+var file_pet_ms_proto_depIdxs = []int32{
 	0, // 0: proto.PetService.Create:input_type -> proto.CreatePetRequest
 	2, // 1: proto.PetService.Update:input_type -> proto.UpdatePetRequest
 	4, // 2: proto.PetService.Delete:input_type -> proto.DeletePetRequest
@@ -679,26 +680,26 @@ var file_proto_pet_ms_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_proto_pet_ms_proto_init() }
-func file_proto_pet_ms_proto_init() {
-	if File_proto_pet_ms_proto != nil {
+func init() { file_pet_ms_proto_init() }
+func file_pet_ms_proto_init() {
+	if File_pet_ms_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_pet_ms_proto_rawDesc), len(file_proto_pet_ms_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pet_ms_proto_rawDesc), len(file_pet_ms_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_pet_ms_proto_goTypes,
-		DependencyIndexes: file_proto_pet_ms_proto_depIdxs,
-		MessageInfos:      file_proto_pet_ms_proto_msgTypes,
+		GoTypes:           file_pet_ms_proto_goTypes,
+		DependencyIndexes: file_pet_ms_proto_depIdxs,
+		MessageInfos:      file_pet_ms_proto_msgTypes,
 	}.Build()
-	File_proto_pet_ms_proto = out.File
-	file_proto_pet_ms_proto_goTypes = nil
-	file_proto_pet_ms_proto_depIdxs = nil
+	File_pet_ms_proto = out.File
+	file_pet_ms_proto_goTypes = nil
+	file_pet_ms_proto_depIdxs = nil
 }
