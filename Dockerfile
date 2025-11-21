@@ -27,6 +27,8 @@ RUN go mod download
 COPY . .
 
 RUN protoc \
+    -I=./proto \
+    -I=./googleapis \
     --go_out=. --go_opt=paths=source_relative \
     --go-grpc_out=. --go-grpc_opt=paths=source_relative \
     ./proto/pet-ms.proto
