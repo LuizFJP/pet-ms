@@ -4,7 +4,7 @@
 // 	protoc        v6.32.0--rc1
 // source: proto/pet-ms.proto
 
-package pet_ms
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
