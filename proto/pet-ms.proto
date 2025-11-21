@@ -3,34 +3,34 @@ syntax = "proto3";
 option go_package = "https://github.com/LuizFJP/pet-ms";
 
 package proto;
-//import "google/api/annotations.proto";
+import "google/api/annotations.proto";
 
 
 service PetService {
   rpc Create (CreatePetRequest) returns (CreatePetResponse) {
-//    option (google.api.http) = {
-//      post: "/pets"
-//      body: "*"
-//    };
+    option (google.api.http) = {
+      post: "/pets"
+      body: "*"
+    };
   }
 
   rpc Update (UpdatePetRequest) returns (UpdatePetResponse) {
-//    option (google.api.http) = {
-//      put: "/pets/{uuid}"
-//      body: "*"
-//    };
+    option (google.api.http) = {
+      put: "/pets/{uuid}"
+      body: "*"
+    };
   }
 
   rpc Delete (DeletePetRequest) returns (DeletePetResponse) {
-//    option (google.api.http) = {
-//      delete: "/pets/{uuid_guardian}"
-//    };
+    option (google.api.http) = {
+      delete: "/pets/{uuid_guardian}"
+    };
   }
 
   rpc Get (GetPetRequest) returns (GetPetResponse) {
-//    option (google.api.http) = {
-//      get: "/pets/{uuid}"
-//    };
+    option (google.api.http) = {
+      get: "/pets/{uuid}"
+    };
   }
 }
 
