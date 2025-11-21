@@ -18,7 +18,7 @@ func main() {
 		log.Fatalf("failed to listen on port 50051: %v", err)
 	}
 
-	services, err := persistence.NewPetRepo("postgres", "lgc_user", "lgc_teste_password", "5432", "db", "pet_db")
+	services, err := persistence.NewPetRepo("postgres", "lgc_user", "lgc_teste_password", "5432", "pg_pet", "pet_db")
 	if err != nil {
 		panic(err)
 	}
