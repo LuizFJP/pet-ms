@@ -5,7 +5,7 @@ ARG VERSION=dev
 ARG COMMIT=none
 ARG BUILD_TIME=unknown
 
-WORKDIR /app
+WORKDIR /
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
       protobuf-compiler ca-certificates git unzip \
@@ -24,27 +24,21 @@ ENV CGO_ENABLED=0 \
 COPY go.mod go.sum ./
 RUN go mod download
 
-COPY . /app
-COPY proto /app/proto
-COPY googleapis /app/googleapis
+COPY . .
 
-RUN echo && ls
 RUN protoc \
-    -I=. \
-    -I=./googleapis \
     --go_out=. --go_opt=paths=source_relative \
     --go-grpc_out=. --go-grpc_opt=paths=source_relative \
     ./proto/pet-ms.proto
 
-RUN mkdir -p /app/bin && \
-    go build -trimpath \
-      -ldflags "-s -w -X main.version=${VERSION} -X main.commit=${COMMIT} -X main.buildTime=${BUILD_TIME}" \
-      -o /app/bin/pet-ms ${MAIN_PACKAGE}
+RUN go build -trimpath \
+    -ldflags "-s -w -X main.version=${VERSION} -X main.commit=${COMMIT} -X main.buildTime=${BUILD_TIME}" \
+    -o /app ${MAIN_PACKAGE}
 
 FROM gcr.io/distroless/static:nonroot
 
 WORKDIR /
-COPY --from=builder /app/bin/pet-ms /app
+COPY --from=builder /app /app
 
 EXPOSE 50051
 USER nonroot:nonroot
