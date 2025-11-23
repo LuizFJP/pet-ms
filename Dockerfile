@@ -25,10 +25,9 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-
-RUN protoc \
-    --go_out=. --go_opt=paths=source_relative \
-    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+RUN protoc -I ./proto \
+    --go_out=./proto --go_opt=paths=source_relative \
+    --go-grpc_out=./proto --go-grpc_opt=paths=source_relative \
     ./proto/pet-ms.proto
 
 RUN go build -trimpath \
