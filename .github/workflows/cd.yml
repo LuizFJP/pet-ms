@@ -15,9 +15,9 @@ jobs:
       - name: Deploy DEV
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: ${{ secrets.SSH_HOST_DEV }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_DEV }}
           script: |
             cd ~/pet-ms
             git pull origin dev
@@ -33,9 +33,9 @@ jobs:
       - name: Deploy PRD
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: ${{ secrets.SSH_HOST_PRD }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_PRD }}
           script: |
             cd ~/pet-ms
             git pull origin main
