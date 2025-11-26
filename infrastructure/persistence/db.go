@@ -15,8 +15,8 @@ type Repositories struct {
 }
 
 func NewPetRepo(Dbdriver, DbUser, DbPassword, DbPort, DbHost, DbName string) (*Repositories, error) {
-	DBURL := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", DbHost, DbPort, DbUser, DbName, DbPassword)
-	db, err := gorm.Open(Dbdriver, DBURL)
+	DB_URL := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", DbHost, DbPort, DbUser, DbName, DbPassword)
+	db, err := gorm.Open(Dbdriver, DB_URL)
 	if err != nil {
 		return nil, err
 	}
