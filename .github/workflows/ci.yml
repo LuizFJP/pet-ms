@@ -36,6 +36,12 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.projectKey=LuizFJP_pet-ms
+            -Dsonar.organization=luizfjp
+            -Dsonar.sources=.
+            -Dsonar.go.coverage.reportPaths=coverage.out
 
       - name: Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
