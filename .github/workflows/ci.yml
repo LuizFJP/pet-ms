@@ -32,7 +32,7 @@ jobs:
         run: go test ./... -coverprofile=coverage.out
 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v3
+        uses: sonarsource/sonarcloud-scan-action@v3
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
@@ -44,7 +44,7 @@ jobs:
             -Dsonar.go.coverage.reportPaths=coverage.out
 
       - name: Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
+        uses: sonarsource/sonarcloud-quality-gate-action@v1.1
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         timeout-minutes: 5
