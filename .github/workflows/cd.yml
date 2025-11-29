@@ -6,6 +6,10 @@ on:
     types: [completed]
 
 jobs:
+  debug:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "CD disparou! branch=${{ github.event.workflow_run.head_branch }} status=${{ github.event.workflow_run.conclusion }}"
   deploy-dev:
     if: >
       github.event.workflow_run.conclusion == 'success' &&
