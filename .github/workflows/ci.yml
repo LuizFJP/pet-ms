@@ -59,7 +59,7 @@ jobs:
       - id: meta
         uses: docker/metadata-action@v5
         with:
-          images: luizfjp/pet-ms
+          images: luizportel4/pet-ms
           tags: |
             type=raw,value=dev,enable=${{ startsWith(github.ref, 'refs/heads/dev') }}
             type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/heads/main') }}
