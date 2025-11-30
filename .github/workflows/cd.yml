@@ -2,7 +2,7 @@ name: CD EC2 (DEV + PRD)
 
 on:
   workflow_run:
-    workflows: ["Go CI + Sonar + DockerHub"]
+    workflows: ["CI"]
     types: [completed]
 
 jobs:
