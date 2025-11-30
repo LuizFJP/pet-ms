@@ -41,5 +41,5 @@ jobs:
             cd pet-ms
             git pull origin main
             cd ..
-            docker compose docker-compose.prd.yml pull
-            docker compose docker-compose.prd.yml up -d
+            docker compose -f docker-compose.prd.yml pull
+            docker compose -f docker-compose.prd.yml up -d
