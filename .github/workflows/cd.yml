@@ -40,6 +40,6 @@ jobs:
             cd ~/pet-digital
             cd pet-ms
             git pull origin main
-            docker compose --file docker-compose.prd.yml pull
             cd ..
-            docker compose --file docker-compose.prd.yml up -d
+            docker compose docker-compose.prd.yml pull
+            docker compose docker-compose.prd.yml up -d
