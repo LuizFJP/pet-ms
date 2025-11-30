@@ -37,7 +37,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY_PRD }}
           script: |
-            cd ~/pet-ms
+            cd ~/pet-digital
+            cd pet-ms
             git pull origin main
             docker compose -f docker-compose.prd.yml pull
+            cd ..
             docker compose -f docker-compose.prd.yml up -d
