@@ -21,8 +21,8 @@ jobs:
           script: |
             cd ~/pet-ms
             git pull origin dev
-            docker compose -f docker-compose.dev.yml pull
-            docker compose -f docker-compose.dev.yml up -d
+            docker compose --file docker-compose.dev.yml pull
+            docker compose --file docker-compose.dev.yml up -d
 
   deploy-prd:
     if: >
