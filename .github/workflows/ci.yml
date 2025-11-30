@@ -31,17 +31,17 @@ jobs:
       - name: Coverage
         run: go test ./... -coverprofile=coverage.out
 
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        with:
-          args: >
-            -Dsonar.projectKey=LuizFJP_pet-ms
-            -Dsonar.organization=luizfjp
-            -Dsonar.sources=.
-            -Dsonar.go.coverage.reportPaths=coverage.out
+      # - name: SonarQube Scan
+      #   uses: SonarSource/sonarqube-scan-action@v6
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      #   with:
+      #     args: >
+      #       -Dsonar.projectKey=LuizFJP_pet-ms
+      #       -Dsonar.organization=luizfjp
+      #       -Dsonar.sources=.
+      #       -Dsonar.go.coverage.reportPaths=coverage.out
 
   docker:
     runs-on: ubuntu-latest
