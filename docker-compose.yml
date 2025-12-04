@@ -47,5 +47,13 @@ services:
       - "9090:9090"
     depends_on:
       - pet-ms
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
 volumes:
   pgdata:
