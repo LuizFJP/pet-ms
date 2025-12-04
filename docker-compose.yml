@@ -29,6 +29,7 @@ services:
     image: pet-ms:1.0.0
     ports:
       - "50051:50051"
+      - "2112:2112"
     environment:
       APP_PORT: "50051"
       DB_DSN: "postgres://lgc_user:lgc_teste_password@db:5432/pet_db?sslmode=disable"
@@ -38,5 +39,13 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - pet-ms
 volumes:
   pgdata:

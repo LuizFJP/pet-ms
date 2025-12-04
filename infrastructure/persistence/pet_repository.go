@@ -37,6 +37,7 @@ func (p *PetRepo) GetPet(uuid string) (*entity.Pet, map[string]string) {
 	}
 	return pet, nil
 }
+
 func (p *PetRepo) UpdatePet(pet *entity.Pet) (*entity.Pet, map[string]string) {
 	dbErr := map[string]string{}
 
