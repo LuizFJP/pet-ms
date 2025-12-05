@@ -11,6 +11,9 @@ on:
   pull_request:
     branches: [ "dev", "main" ]
 
+permissions:
+  contents: write
+
 jobs:
   test-sonar:
     runs-on: ubuntu-latest
@@ -44,6 +47,16 @@ jobs:
             -Dsonar.organization=luizfjp
             -Dsonar.sources=.
             -Dsonar.go.coverage.reportPaths=coverage.out
+
+      - name: Create GitHub tag for version
+        if: startsWith(github.ref, 'refs/heads/main')
+        run: |
+          VERSION="1.0.${{ github.run_number }}"
+          echo "Tagging version v$VERSION"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag "v$VERSION"
+          git push origin "v$VERSION"
 
   docker:
     runs-on: ubuntu-latest
